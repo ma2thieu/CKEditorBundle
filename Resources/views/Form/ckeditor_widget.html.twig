@@ -21,7 +21,7 @@
 
             CKEDITOR.replace("{{ id }}",{
               {% for key, val in options %}
-                '{{ key }}': [{{ val | json_encode | raw }}],
+                '{{ key }}': {{ val | json_encode | raw }},
               {% endfor %}
 
               filebrowserImageBrowseUrl: '{{ asset('bundles/ckeditor/simogeo-filemanager/index.html') }}',
